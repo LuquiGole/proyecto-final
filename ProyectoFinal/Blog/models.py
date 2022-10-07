@@ -1,3 +1,5 @@
+from operator import mod
+from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -5,10 +7,13 @@ from django.db import models
 class Autor(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
+    profesion = models.CharField(max_length=50)
     
 
 class Articulo(models.Model):
-    nombre = models.CharField(max_length=50)
+    titulo = models.CharField(max_length=50)
+    texto = models.CharField(max_length=1000)
+    fecha_publicacion = models.DateField(null=True)
     
-class Tema(models.Model):
+class Seccion(models.Model):
     nombre = models.CharField(max_length=50)
