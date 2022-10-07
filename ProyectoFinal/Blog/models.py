@@ -6,6 +6,9 @@ from django.db import models
 
 
 class Autor(models.Model):
+    class Meta:
+        verbose_name_plural = "Autores"
+
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     profesion = models.CharField(max_length=50)
@@ -18,4 +21,7 @@ class Articulo(models.Model):
 
 
 class Seccion(models.Model):
+    class Meta:
+        verbose_name_plural = "Secciones"
+
     nombre = models.CharField(max_length=50)
