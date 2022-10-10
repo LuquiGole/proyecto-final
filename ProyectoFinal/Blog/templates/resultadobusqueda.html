@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+{% block contenidoQueCambia %}
+{% for resultado in resultados%}
+<h2>RESULTADOS DE LA BUSQUEDA:</h2>
+<br>
+<h4>Titulo: {{resultado.titulo}} - Texto: {{resultado.texto}} - Fecha de publicacion: {{resultado.fecha_publicacion}}</h4>
+<br>
+{% endfor %}
+{% endblock %}

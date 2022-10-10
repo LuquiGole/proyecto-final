@@ -3,5 +3,11 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
-
+<form action="" method="POST"> {% csrf_token %}
+    <table>
+        {{formulario.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="Guardar Formulario">
+</form>
 {% endblock %}
