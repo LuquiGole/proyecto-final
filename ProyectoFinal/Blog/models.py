@@ -1,36 +1,53 @@
-from operator import mod
-from pyexpat import model
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=40)
+    apellido = models.CharField(max_length=40)
+    dni = models.IntegerField(primary_key=True)
+
+    def __str__(self):
+        return f"{self.dni} | {self.nombre} {self.apellido}"
 
 
-class Autor(models.Model):
+class Posteo(models.Model):
+
+    autor = models.CharField(max_length=40)
+    email = models.EmailField()
+    fecha = models.DateField(auto_now_add=True)
+    titulo = models.CharField(max_length=40, primary_key=True)
+    cuerpo = models.TextField("")
+    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.titulo} | {self.autor}"
+
+
+class Comentario(models.Model):
+
+    autor = models.CharField(max_length=40)
+    email = models.EmailField()
+    cuerpo = models.TextField("")
+    fecha = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.autor} | {self.fecha}"
+
+
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user} | {self.imagen}"
+
     class Meta:
-        verbose_name_plural = "Autores"
-
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    profesion = models.CharField(max_length=50)
-
-    def __str__(self):
-        return f"{self.nombre} {self.apellido}"
+        verbose_name = "Avatar"
+        verbose_name_plural = "Avatares"
 
 
-class Articulo(models.Model):
-    titulo = models.CharField(max_length=50)
-    texto = models.CharField(max_length=1000)
-    fecha_publicacion = models.DateField(null=True)
-
-    def __str__(self):
-        return self.titulo
-
-
-class Seccion(models.Model):
-    class Meta:
-        verbose_name_plural = "Secciones"
-
-    nombre = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.nombre
+class Perfil(models.Model):
+    first_name = models.CharField(max_length=40)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField(max_length=40)

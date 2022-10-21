@@ -1,8 +1,7 @@
 from django.contrib import admin
-from Blog.models import Autor, Articulo, Seccion
+from .models import *
 
-# Register your models here.
-
-admin.site.register(Autor)
-admin.site.register(Articulo)
-admin.site.register(Seccion)
+admin.site.register(Usuario)
+admin.site.register(Posteo)
+admin.site.register(Comentario)
+admin.site.register(Avatar)
