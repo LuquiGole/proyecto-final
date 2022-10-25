@@ -7,9 +7,11 @@ Entrega del  proyecto final curso Python CoderHouseas
 * Lucas Golé
 * Lucas Nicolás Rodríguez
 
-Qué hicimos?
+<h3>Como trabajamos?</h3>
 
-Para realizar la entrega, fuimos coordinando reuniones virtuales via zoom y trabajando en conjunto para desarrollar el proyecto final. Tuvimos algunas dificultades para trabajar en conjunto via Git, por lo que optamos por hacerlo de esta manera.
+Nos encontramos con algunas dificultades para trabajar en conjunto con Git. Frente a esa situacion, decidimos coordinar reuniones virtuales via zoom y trabajar en conjunto para desarrollar el proyecto final.
+
+
 
 
 
