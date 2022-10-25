@@ -1,7 +1,7 @@
 # proyecto-final
 Entrega del  proyecto final curso Python CoderHouseas
 
-Integrantes:
+<h3>Integrantes:</h3>
 
 * Lucas Barreiro
 * Lucas Golé
